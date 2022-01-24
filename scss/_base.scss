@@ -1,0 +1,169 @@
+/*header*/
+.header-bg{
+	background-color: $text-primary;
+	position: relative;
+}
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+ 	height: 60px;	
+
+	h1 a{
+ 	padding-left: 42px;
+ 	font-size: $fz-6;	
+	color: $text-white;
+	font-weight: bold;
+	}
+	
+	.fa-bars{
+	color: $text-white;
+	}
+}
+.menu{
+ 	display: flex;
+ 	justify-content: space-between;
+		li a{
+		color: $text-white;
+		display: block;
+		padding-left: 15px;
+		padding-right: 15px;
+		line-height: 56px;
+		font-size: $fz-3;
+			&:hover{
+			color: rgba($text-gray, 1);
+			}
+		} 	
+}
+
+/*在PC上隱藏漢堡選單按鈕*/
+.showmenu{
+  display: none;
+}
+
+@include mobile{
+  .menu {
+    /*在手機版先設定0px超出範圍隱藏*/	
+    max-height: 0px;
+    overflow: hidden;
+	/*將menu選單定位在header，並讓選單在最上層*/
+	position: absolute;
+	z-index: 100;
+	background: $text-primary;
+	top: 60px;
+	left: 0;
+	right: 0;
+	transition: max-height 1.3s;
+	display: block;
+		li a{
+			border-top: 1px solid $text-white;
+		}
+
+	}
+	/*手機版打開showmenu*/
+	.showmenu{
+		display: block;    
+		margin: 1em;
+	}
+  	/*jQ點擊後動態在 body 加上 class */
+  	.menu-show .menu{
+    max-height: 500px;
+	/*display: block;*/
+
+	}
+}
+
+
+/*banner*/
+.banner{
+	background-image: url("../img/header_desktop.jpg");
+	padding-top: 250px;
+	padding-bottom: 250px;
+ 	background-position: center center;
+	background-repeat: no-repeat; 
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	
+	.bannerText{
+		width: 460px;
+		height: 152px;
+		//background: rgba(0,0,0,0.35);
+		text-align: center;
+		font-weight: bold;
+		color: $text-white;
+
+		h2{
+			font-size: $fz-8;						
+			line-height: 48px;
+		}
+		p{
+			font-size: $fz-6;			
+		}
+	}
+}			
+
+.title{
+		font-size: $fz-9;
+		margin-bottom: 40px;
+		text-align: center;
+		font-weight: bold;
+		color: $text-third;
+		line-height: 46px;
+		
+	}		
+@include mobile{
+	.title{
+		font-size: $fz-7;
+	}
+}
+
+
+/*footer*/
+.footerBg{
+	background-color: $text-yellow;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+.footer{
+	display: flex;
+	justify-content: space-between;
+	color: $text-third;
+	
+	h3{
+		font-size: $fz-5;
+		margin-bottom: 16px;
+		font-weight: bold;
+	}
+	li{
+		line-height: 24px;
+	}
+	.footerTitle{
+		text-align: right;
+		a{
+			font-size: $fz-11;
+			font-weight: bold;
+			color: $text-third;
+		}
+		i{
+			font-size: $fz-8;
+			margin-left: 12px;
+			margin-top: 22px;
+		}
+	}
+}
+
+@include mobile{
+	.footer{
+		display: block;
+		width: 100%;
+		ul{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+
+
+
+ 

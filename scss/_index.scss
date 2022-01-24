@@ -1,0 +1,244 @@
+/*content*/
+.content{
+	
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	.contentText{
+		display: flex;
+		justify-content: space-around;
+		text-align: center;	
+		color: $text-secondary;	
+		li{
+			width: 33.33333333%;
+			margin-right: 20px;
+			margin-left: 2px;				
+		}
+		img{
+			border-radius: 50%;
+			width: 200px;
+			height: 200px;						
+		}
+		h2{
+			font-size: $fz-5;	
+			margin-top: 20px;
+			margin-bottom: 11px;
+			font-weight: bold;			
+		}
+		p{
+			line-height: 24px;
+			text-align: left;
+		}		
+	}
+}
+@include mobile{
+	.content{
+		.contentText{
+		display: block;
+		li{
+			width: 100%;
+		}
+		p{
+			margin-bottom: 40px;
+		}
+		}
+		
+	}
+
+}
+
+
+/*about*/
+.aboutBg{
+    background: $text-gray;
+}
+.about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .aboutImg{
+        width: 470px;
+        height: 460px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+    .aboutText{
+        //margin-top: 80px;        
+        margin-left: 25px;
+        width: 470px;
+        color: $text-secondary;
+        h2{
+            font-size: $fz-5;
+            line-height: 32px;
+            font-weight: bold;
+            margin-bottom: 16px;
+			color: $text-third;
+            
+        }
+        p{
+            line-height: 24px;
+        }
+    }
+        
+}
+@include mobile{
+    .about{
+        display: block;
+
+        .aboutImg{
+            width: 100%;         
+        }
+        .aboutText{
+            width: 100%;
+            margin: 0px;
+            padding: 30px 20px;
+            
+        }
+    }
+    
+}
+
+/*reports*/
+.report{
+	padding-bottom: 60px;
+	padding-top: 60px;
+	color: $text-secondary;	
+}
+.reportsUl{
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.reportsLi{
+	display: flex;	
+		
+		img{			
+			width: 67px;
+			height: 67px;
+			border-radius: 100%;
+		}	
+		.reportText{		
+		width: 220px;
+		margin-left: 13px;
+
+		.reporName{
+			font-size: $fz-3;
+			line-height: 24px;
+			font-weight: 600;				
+		}
+		p{
+			margin-top: 22px;
+			margin-bottom: 16px;
+			line-height: 24px;
+		}
+		a{
+			display: block;
+			color: $text-secondary;
+			text-align: right;
+			
+
+			&:hover{
+			font-weight: 600;	
+				color: $text-secondary;
+			}
+		}
+
+	}
+}
+	
+@include mobile{
+	.reportsUl{
+	display: block;
+}
+
+.reportsLi{
+	.reportText{
+	width: 100%;
+	}
+}
+}
+	
+/*order*/
+.orderBg{		
+	background: $text-gray100;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.order{
+	font-size: $fz-1;
+	line-height: 26px;
+	display: flex;
+	justify-content: space-between;
+	img{
+		width: 460px;
+	}
+	.orderForm{
+		margin-left: 20px;
+		width: 460px;		
+	}
+	.orderInput{
+		width: 100%;		
+		height: 32px;
+		margin-bottom: 12px;
+		background: $text-white;
+		border: 1px solid $text-secondary;
+		box-shadow: inset 0px 1px 0px 0px $text-third;
+		border-radius: 3px;
+
+	}
+	//focus沒變化why
+	//.orderInput:focus{
+			//background: $text-white;
+			//border: 1px solid $text-third;
+			//box-shadow:none;
+	//}	
+	.button{
+		display: flex;
+		justify-content: end;
+		align-items: center;
+
+		.btn{
+		
+		color: $text-white;
+		background: $text-third;
+		border-radius: 3px;
+		border: 0px;
+		margin-left: 11px;
+		margin-top: 30px;		
+		}
+		a{
+			display: block;
+			width: 70px;
+		
+		text-align: center;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		}
+		.cancel{
+			background: $text-secondary;
+			
+		}
+	}
+
+}
+
+
+@include mobile{
+	.order{
+		display: block;
+
+		img{
+			width: 100%;
+		}
+		.orderForm{	
+			margin: 0 auto;	
+			width: 100%;		
+		}
+	}
+}

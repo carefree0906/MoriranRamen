@@ -1,0 +1,244 @@
+/*cart*/
+.cart{
+    display: flex;
+   	padding-top: 50px;
+	padding-bottom: 50px;
+    color: $text-third;
+    
+}
+@include mobile{
+    .cart{
+        display: block;
+    }
+}
+
+.aside{
+    width: 25%;
+    
+    h3{
+        font-size: $fz-5;
+        font-weight: bold;
+        line-height: 32px;
+        margin-bottom: 16px;    
+    }
+    i{
+        font-size: $fz-6;
+        margin-right: 16px;
+    }    
+    a{
+        display: block;
+        font-size: $fz-3;
+        line-height: 40px;
+        color: $text-third;
+         font-weight: bold;
+         border-bottom: 1px solid $text-third;
+         &:hover{
+             background: $text-third;
+             color: $text-white;
+         }
+     }
+}
+@include mobile{
+    .aside{
+        width: 100%;
+    }
+}
+
+.main{
+    width: 75%;
+    padding-left: 30px;
+}
+@include mobile{
+    .main{
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+.topmain{
+   display: flex;
+   justify-content: space-between;   
+   margin-bottom: 16px;  
+
+    .search{        
+        display: flex;
+        align-items: center;        
+        
+        input{
+            width: 424px;
+            height: 32px;            
+            border: 2px solid $text-third;
+            border-radius: 2px 0px 0px 2px;
+        }
+
+        a{
+            background: $text-third;
+            color: $text-white;
+            padding: 7px 9px;    
+            border: none;
+            border-radius: 0px 2px 2px 0px;
+            width: 36px;
+            height: 32px;
+            display: block;            
+        }
+    }
+
+    .shopping{
+        position: relative;
+        display: flex;
+        align-items: center;        
+        a{
+            color: $text-third;
+            padding-right: 12px;
+            border-right: 1px solid $text-third;        }
+        i{
+            padding-left: 12px;
+            font-size: $fz-6;
+            margin-right: 16px;
+        }
+        span{
+            position: absolute;
+            top: 0;
+            right: 8px;
+            z-index: 10;
+            width: 16px;
+            height: 16px;
+            background: $text-primary;
+            color: $text-white;
+            border-radius: 50%;            
+            border: 1px solid #EFE9E7;
+            text-align: center;
+            font-size: $fz-0;
+        }
+    }
+
+}
+@include pad{
+    .topmain{
+       display: flex;
+
+      .shopping{ 
+        display: block;
+        a{
+           display: none;
+        }
+    }
+}
+}
+        
+
+@include mobile{
+    .topmain{
+        display: block;
+        .search{
+            width: 100%;
+            input{
+                width: 300px;
+            }
+        }
+        .shopping{
+            display: block;
+            text-align: right;
+            margin-bottom: 16px;
+            margin-top: 16px;
+            a{
+                display: none;
+            }
+
+        }
+    }
+}
+
+.cartMenu{
+    color: $text-third;
+    text-align: center;
+    
+    .cartMenuUl{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;  
+
+        li{
+        position: relative;
+        width: 30%;
+        box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+        margin-bottom: 40px;
+        padding: 10px;
+        /*讓人氣no.1橫條橘底超出範圍隱藏*/
+        /*overflowg設定跟position:relative同地方*/
+        overflow: hidden;     
+    
+        img{
+            max-width: 100%;
+            max-height: 100%;         
+        }
+        .no1text{
+            background: $text-primary;
+            color: $text-white;
+            transform: rotate(-315deg);
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            font-size: $fz-1;
+            z-index: 4;
+            padding-top: 7px;
+            /*設定寬高讓底超出範圍*/
+            width: 110px;
+            height: 28px;
+        }
+        .no1bg{
+            background: $text-yellow;
+            color: $text-white;
+            transform: rotate(-315deg);
+            position: absolute;
+            top: 0px;
+            right: -22px;
+            z-index:2; 
+           width: 125px;
+            height: 32px;           
+        }
+        h4{            
+            font-size: $fz-4;
+            font-weight: bold;            
+            margin-top: 11px;            
+            margin-bottom: 8px;        
+        }
+        span{
+            font-size: $fz-4;
+            font-weight: bold;            
+        }
+        a{
+            display: block;                        
+            font-size: $fz-2;            
+            color: $text-primary;
+            border: 2px solid $text-primary;
+            border-radius: 3px;
+            margin-top: 10px;
+            padding: 5px;
+            &:hover{
+            color: $text-white;
+            background:$text-primary;
+            border: 2px solid $text-primary;
+            }            
+        }
+        .fa-shopping-cart{
+            margin-right: 5px;
+        }        
+        
+     }
+    }
+}
+
+@include mobile{
+    .cartMenu{
+        .cartMenuUl{
+        display: block;
+        li{
+            width: 100%;
+        }
+        }
+
+
+
+    }
+}
